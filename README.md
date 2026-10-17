@@ -1,2 +1,2 @@
-#Gorod-Bolxov
+Gorod-Bolxov
 Болхов — жемчужина Орловщины
