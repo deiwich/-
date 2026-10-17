@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Мой сайт</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: system-ui, sans-serif; line-height: 1.6; }
+
+    header {
+      background: #1a1a2e;
+      color: #fff;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    nav a { color: #fff; text-decoration: none; margin-left: 1.5rem; }
+    nav a:hover { color: #e94560; }
+
+    .hero {
+      min-height: 80vh;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      background: linear-gradient(135deg, #16213e, #0f3460);
+      color: #fff;
+      padding: 2rem;
+    }
+    .hero h1 { font-size: clamp(2rem, 5vw, 4rem); margin-bottom: 1rem; }
+    .hero p { font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.9; }
+
+    .btn {
+      display: inline-block;
+      padding: 0.8rem 2rem;
+      background: #e94560;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: transform 0.2s, background 0.2s;
+    }
+    .btn:hover { background: #c73650; transform: translateY(-2px); }
+
+    footer { text-align: center; padding: 2rem; background: #1a1a2e; color: #aaa; }
+  </style>
+</head>
+<body>
+  <header>
+    <strong>Logo</strong>
+    <nav>
+      <a href="#about">О нас</a>
+      <a href="#services">Услуги</a>
+      <a href="#contact">Контакты</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div>
+      <h1>Добро пожаловать</h1>
+      <p>Современный сайт, созданный с нуля</p>
+      <a href="#contact" class="btn">Связаться</a>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2026 Все права защищены
+  </footer>
+</body>
+</html>
