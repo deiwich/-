@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Болхов — жемчужина Орловщины</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.6;
+            color: #2c2c2c;
+            background-color: #f9f7f4;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1e3c5c 0%, #2a5a7a 100%);
+            color: #fff;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 0.5rem;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            font-style: italic;
+        }
+
+        nav {
+            background-color: #fff;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        nav a {
+            color: #1e3c5c;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 0.3rem 0.8rem;
+            border-radius: 4px;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #1e3c5c;
+            color: #fff;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        section {
+            margin-bottom: 3rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: #1e3c5c;
+            margin-bottom: 1.5rem;
+            border-bottom: 3px solid #c9a96e;
+            display: inline-block;
+            padding-bottom: 0.3rem;
+        }
+
+        .intro-text {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            text-align: justify;
+        }
+
+        .facts {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .fact-card {
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+            text-align: center;
+            border-top: 4px solid #c9a96e;
+        }
+
+        .fact-card .number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #1e3c5c;
+            display: block;
+            line-height: 1.2;
+        }
+
+        .fact-card .label {
+            font-size: 0.95rem;
+            color: #555;
+        }
+
+        .sights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.8rem;
+            margin-top: 1.5rem;
+        }
+
+        .sight-card {
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+        }
+
+        .sight-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .sight-card .card-header {
+            background: #1e3c5c;
+            color: #fff;
+            padding: 1rem 1.5rem;
+        }
+
+        .sight-card .card-header h3 {
+            font-size: 1.3rem;
+            margin: 0;
+        }
+
+        .sight-card .card-body {
+            padding: 1.5rem;
+        }
+
+        .sight-card .card-body p {
+            margin-bottom: 0.8rem;
+            font-size: 0.98rem;
+        }
+
+        .tag {
+            display: inline-block;
+            background: #e8e0d5;
+            color: #1e3c5c;
+            padding: 0.2rem 0.7rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-right: 0.4rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .quote-block {
+            background: #fff;
+            border-left: 5px solid #c9a96e;
+            padding: 1.5rem 2rem;
+            margin: 2rem 0;
+            font-style: italic;
+            font-size: 1.1rem;
+            color: #444;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+        }
+
+        .quote-block footer {
+            margin-top: 0.8rem;
+            font-size: 0.9rem;
+            color: #777;
+            font-style: normal;
+        }
+
+        footer {
+            background-color: #1e3c5c;
+            color: #ccc;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: #c9a96e;
+            text-decoration: none;
+        }
+
+        @media (max-width: 600px) {
+            .container { padding: 1.2rem; }
+            nav { gap: 1rem; }
+            .sights-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Болхов</h1>
+    <p>«А Болхов издали — картина» — так говорили путешественники XIX века</p>
+</header>
+
+<nav>
+    <a href="#about">О городе</a>
+    <a href="#sights">Достопримечательности</a>
+    <a href="#facts">Факты</a>
+</nav>
+
+<main class="container">
+
+    <!-- О городе -->
+    <section id="about">
+        <h2>О городе</h2>
+        <p class="intro-text">
+            Болхов — старинный город в Орловской области, расположенный на семи холмах по берегам реки Нугрь. 
+            Первое упоминание о нём относится к 1196 году, а в середине XVI века здесь была построена 
+            дубовая крепость для защиты южных рубежей Московского государства [citation:4][citation:9]. 
+            В XVIII веке Болхов считался «кожевенной столицей» России — сапоги из болховской кожи шли 
+            от Киева до Самары, в них была обута вся российская армия [citation:1][citation:3].
+        </p>
+        <p class="intro-text">
+            Сегодня Болхов называют «младшим братом Суздаля» и одним из немногих малых городов России, 
+            где удалось сохранить историческую планировку улиц и памятники архитектуры XVII–XIX веков [citation:6][citation:8]. 
+            До революции здесь насчитывалось около 28–30 храмов и два монастыря — по количеству церквей 
+            город уступал лишь губернскому Орлу и Ельцу [citation:1][citation:3][citation:12]. 
+            Именно храмы, купеческие особняки и холмистый рельеф создают тот неповторимый облик, 
+            который привлекает сюда путешественников.
+        </p>
+    </section>
+
+    <!-- Достопримечательности -->
+    <section id="sights">
+        <h2>Достопримечательности</h2>
+
+        <div class="sights-grid">
+
+            <div class="sight-card">
+                <div class="card-header">
+                    <h3>Спасо-Преображенский собор</h3>
+                </div>
+                <div class="card-body">
+                    <p>
+                        Главная доминанта города, возвышающаяся на Красной горе. 
+                        Каменный собор строился с 1841 по 1871 год на месте обветшавшего 
+                        храма XVII века. Вмещал до четырёх тысяч человек, а его главный 
+                        колокол весом более 700 пудов был слышен за 15–20 вёрст от города [citation:3].
+                    </p>
+                    <p>
+                        Четырёхъярусная колокольня с часами и высоким шпилем прекрасно видна 
+                        из разных концов города — в неё упирается перспектива главной улицы Ленина 
+                        (бывшей Большой Никольской) [citation:5].
+                    </p>
+                    <div>
+                        <span class="tag">Архитектура</span>
+                        <span class="tag">Красная гора</span>
+                        <span class="tag">XIX век</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sight-card">
+                <div class="card-header">
+                    <h3>Троицкая церковь</h3>
+                </div>
+                <div class="card-body">
+                    <p>
+                        Один из старейших и самых ярких храмов Болхова, построенный в 1701–1708 годах 
+                        на средства купцов Бабковых. Это настоящий памятник «дивного узорочья»: 
+                        барабаны пятиглавия украшены кокошниками с раковинами, стены — богатым карнизом 
+                        и нарядными изразцами с растительным орнаментом [citation:3][citation:11].
+                    </p>
+                    <p>
+                        Церковь стоит на территории бывшего Болховского кремля — именно здесь 
+                        когда-то начиналась история города-крепости.
+                    </p>
+                    <div>
+                        <span class="tag">XVII–XVIII вв.</span>
+                        <span class="tag">Узорочье</span>
+                        <span class="tag">Кремль</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sight-card">
+                <div class="card-header">
+                    <h3>Георгиевская церковь</h3>
+                </div>
+                <div class="card-body">
+                    <p>
+                        Колокольня Георгиевской церкви — самая высокая в Орловской области: 
+                        76 метров (всего на 5 метров меньше московского Ивана Великого). 
+                        Храм был построен в середине XVIII века [citation:1][citation:7][citation:8].
+                    </p>
+                    <p>
+                        До 1917 года здесь находилась икона Божией Матери «Взыскание погибших» — 
+                        один из наиболее древних списков в России, сделанный по обету крестьянина, 
+                        чудесным образом спасённого Богородицей [citation:7].
+                    </p>
+                    <div>
+                        <span class="tag">76 метров</span>
+                        <span class="tag">XVIII век</span>
+                        <span class="tag">Панорама</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sight-card">
+                <div class="card-header">
+                    <h3>Троицкий Оптин монастырь</h3>
+                </div>
+                <div class="card-body">
+                    <p>
+                        Мужской монастырь, расположенный в километре от города. По преданию, 
+                        основан в XV веке раскаявшимся разбойником Оптой. В XVII веке стал 
+                        родовой усыпальницей бояр Милославских — родственников царицы Марии, 
+                        жены Алексея Михайловича [citation:9][citation:11].
+                    </p>
+                    <p>
+                        На средства царской семьи в 1668 году здесь начали строительство 
+                        каменного Троицкого собора. Сегодня это памятник федерального значения, 
+                        который называют «миниатюрным Успенским собором» [citation:3][citation:8].
+                    </p>
+                    <div>
+                        <span class="tag">Монастырь</span>
+                        <span class="tag">XV–XVII вв.</span>
+                        <span class="tag">Романовы</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sight-card">
+                <div class="card-header">
+                    <h3>Улица Ленина (Большая Никольская)</h3>
+                </div>
+                <div class="card-body">
+                    <p>
+                        Бывшая главная купеческая улица города, сохранившая дореволюционный облик. 
+                        Здесь можно насчитать не менее двух десятков каменных домов XIX — начала XX века. 
+                        В доме купца Жженова теперь размещается краеведческий музей, а в особняке 
+                        купцов Войновых — Дом культуры [citation:5].
+                    </p>
+                    <p>
+                        Именно с этой улицы открывается тот самый вид на колокольню 
+                        Спасо-Преображенского собора, который стал визитной карточкой Болхова.
+                    </p>
+                    <div>
+                        <span class="tag">Купеческая застройка</span>
+                        <span class="tag">Прогулки</span>
+                        <span class="tag">Музей</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sight-card">
+                <div class="card-header">
+                    <h3>Злынский конезавод</h3>
+                </div>
+                <div class="card-body">
+                    <p>
+                        Одно из старейших коневодческих предприятий России, основанное в начале XX века 
+                        конезаводчиком Василием Телегиным. Здесь разводят русскую рысистую породу — 
+                        универсальных лошадей, которые хороши и в качалке, и под седлом [citation:1].
+                    </p>
+                    <p>
+                        За первые десять лет существования рысаки Злынского трижды становились 
+                        лучшими на российском дерби. Сегодня здесь можно увидеть отреставрированные 
+                        конюшни, конкурное поле и музей-усадьбу Телегина.
+                    </p>
+                    <div>
+                        <span class="tag">Конезавод</span>
+                        <span class="tag">Русская рысистая</span>
+                        <span class="tag">Экскурсии</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Цитата -->
+    <div class="quote-block">
+        «25 церквей пестрят со всех сторон,<br>
+        Лиловые, и желтые, и белые в полоску…»
+        <footer>— Саша Чёрный, «Уездный город Болхов» [citation:3]</footer>
+    </div>
+
+    <!-- Факты -->
+    <section id="facts">
+        <h2>Болхов в цифрах</h2>
+        <div class="facts">
+            <div class="fact-card">
+                <span class="number">1196</span>
+                <span class="label">Первое упоминание в летописи</span>
+            </div>
+            <div class="fact-card">
+                <span class="number">76 м</span>
+                <span class="label">Высота колокольни Георгиевской церкви</span>
+            </div>
+            <div class="fact-card">
+                <span class="number">28</span>
+                <span class="label">Храмов насчитывалось до революции</span>
+            </div>
+            <div class="fact-card">
+                <span class="number">9</span>
+                <span class="label">Холмов, на которых стоит город</span>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <p>Болхов — один из городов <strong>Бирюзового кольца России</strong> [citation:12]</p>
+    <p style="margin-top: 0.8rem; font-size: 0.85rem;">Информация основана на краеведческих и исторических источниках. 2026</p>
+</footer>
+
+</body>
+</html>
